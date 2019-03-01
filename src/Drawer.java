@@ -47,7 +47,7 @@ public class Drawer {
                 System.out.print(" *");
                 k--;
             }
-            System.out.println(" ");
+            System.out.println();
             i++;
         }
     }
@@ -60,7 +60,7 @@ public class Drawer {
                 System.out.print(" *");
                 j--;
             }
-            System.out.println(" ");
+            System.out.println();
             i++;
         }
     }
@@ -78,7 +78,7 @@ public class Drawer {
                 System.out.print(" *");
                 k--;
             }
-            System.out.println(" ");
+            System.out.println();
             i--;
         }
     }
@@ -91,7 +91,7 @@ public class Drawer {
                 System.out.print(" *");
                 j--;
             }
-            System.out.println(" ");
+            System.out.println();
             i--;
         }
     }
@@ -114,7 +114,7 @@ public class Drawer {
                 System.out.print(" *");
                 l--;
             }
-            System.out.println(" ");
+            System.out.println();
             i++;
         }
     }
