@@ -1,4 +1,9 @@
 public class Drawer {
+    private String filler;
+
+    Drawer (String filler){
+        this.filler = filler;
+    }
 /**            /|\
  *           /  |  \
  *         /    |    \
@@ -15,36 +20,75 @@ public class Drawer {
  *
  */
     void drawFirst(){
-        secondTriangle();
-        fourthTriangle();
+        System.out.println("First task");
+        drawSecondTriangle();
+        drawFourthTriangle();
     }
     void drawSecond(){
-        thirdTriangle();
+        System.out.println("Second task");
+        drawThirdTriangle();
     }
     void drawThird(){
-        firstTriangle();
+        System.out.println("Third task");
+        drawFirstTriangle();
     }
     void drawFourth(){
-        firstTriangle();
-        thirdTriangle();
+        System.out.println("Fourth task");
+        drawFirstTriangle();
+        drawThirdTriangle();
     }
     void drawFifth(){
-        pyramide();
-        pyramide();
+        System.out.println("Fifth task");
+        drawPyramide();
+        drawPyramide();
     }
 
 
-    private void firstTriangle(){
+    private void drawFirstTriangle(){
         int i = 1;
         while (i<=5) {
-            int j = i;
-            while (5-j>0){
-                System.out.print("  ");
-                j++;
-            }
-            int k = i;
+            drawAscendingTriangle(i);
+            drawDescendingTriangle(i);
+            System.out.println();
+            i++;
+        }
+    }
+
+    private void drawSecondTriangle(){
+        int i = 1;
+        while (i<=5) {
+            drawDescendingTriangle(i);
+            System.out.println();
+            i++;
+        }
+    }
+
+    private void drawThirdTriangle(){
+        int i = 5;
+        while (i>0) {
+            drawAscendingTriangle(i);
+            drawDescendingTriangle(i);
+            System.out.println();
+            i--;
+        }
+    }
+
+    private void drawFourthTriangle(){
+        int i = 5;
+        while (i>0) {
+            drawDescendingTriangle(i);
+            System.out.println();
+            i--;
+        }
+    }
+
+    private void drawPyramide(){
+        int i = 1;
+        while (i<=5) {
+            drawAscendingTriangle(i);
+            int k = i*2;
             while (k>0){
-                System.out.print(" *");
+                System.out.print(filler);
                 k--;
             }
             System.out.println();
@@ -52,69 +96,17 @@ public class Drawer {
         }
     }
 
-    private void secondTriangle(){
-        int i = 1;
-        while (i<=5) {
-            int j = i;
-            while (j>0){
-                System.out.print(" *");
-                j--;
-            }
-            System.out.println();
-            i++;
-        }
-    }
-
-    private void thirdTriangle(){
-        int i = 5;
-        while (i>0) {
-            int j = i;
-            while (j<5){
-                System.out.print("  ");
-                j++;
-            }
-            int k = i;
-            while (k>0){
-                System.out.print(" *");
-                k--;
-            }
-            System.out.println();
+    private void drawDescendingTriangle (int i){
+        while (i>0){
+            System.out.print(filler);
             i--;
         }
+
     }
 
-    private void fourthTriangle(){
-        int i = 5;
-        while (i>0) {
-            int j = i;
-            while (j>0){
-                System.out.print(" *");
-                j--;
-            }
-            System.out.println();
-            i--;
-        }
-    }
-
-    private void pyramide(){
-        int i = 1;
-        while (i<=5) {
-            int j = i;
-            while (5-j>0){
-                System.out.print("  ");
-                j++;
-            }
-            int k = i;
-            while (k>0){
-                System.out.print(" *");
-                k--;
-            }
-            int l = i;
-            while (l>0){
-                System.out.print(" *");
-                l--;
-            }
-            System.out.println();
+    private void drawAscendingTriangle (int i){
+        while (5-i>0) {
+            System.out.print("  ");
             i++;
         }
     }
